@@ -10,9 +10,10 @@ def load_geo(myfile):
     records = Geo.parse(handle)
     return records
 
-records = load_geo('../data/GSE45604_family.soft')
+records_soft = load_geo('../data/GSE45604_family.soft')
+records_matrix = load_geo('../data/GSE45604_series_matrix.txt')
 
-print(records)
+records = records_matrix
 
 # loop over records
 for r in records:
