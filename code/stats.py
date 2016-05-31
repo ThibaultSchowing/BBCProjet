@@ -96,7 +96,8 @@ def volcano_plot(X,y,pval=[],idx=[]):
             p.append(pval[i])
         fc.append(np.mean(X[i,idx1])/np.mean(X[i,idx0]))
         
-    significance_pval = fdr_correction(p)
+    significance_pval = fdr_correction(p, 0.025)
+   
     
     plt.figure()
     plt.plot(-np.log2(fc),-np.log10(p),'b.',zorder=0)
